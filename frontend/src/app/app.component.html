@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Word Search</h1>
+  <form (submit)="onSearch($event)">
+    <div class="form-group">
+      <label for="word">Enter a word:</label>
+      <input
+        type="text"
+        id="word"
+        [(ngModel)]="word"
+        (focus)="pages = null; isApiResponse = false"
+        name="word"
+        class="form-control"
+        required
+        (keydown.enter)="$event.preventDefault()"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  <div *ngIf="isApiResponse && pages">
+    <!-- <h2>Results:</h2> -->
+    <p>The word "{{ word }}" is found on pages: {{ pages }}</p>
+    <!-- <p>{{ pages }}</p> -->
+  </div>
+  <div *ngIf="isApiResponse && !pages">
+    <!-- <h2>Results:</h2> -->
+    <p>The word {{ word }} is not found in the index.</p>
+    <!-- <p>{{ pages }}</p> -->
+  </div>
+</div>
