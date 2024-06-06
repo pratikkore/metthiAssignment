@@ -17,13 +17,9 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </form>
   <div *ngIf="isApiResponse && pages">
-    <!-- <h2>Results:</h2> -->
     <p>The word "{{ word }}" is found on pages: {{ pages }}</p>
-    <!-- <p>{{ pages }}</p> -->
   </div>
   <div *ngIf="isApiResponse && !pages">
-    <!-- <h2>Results:</h2> -->
     <p>The word {{ word }} is not found in the index.</p>
-    <!-- <p>{{ pages }}</p> -->
   </div>
 </div>
